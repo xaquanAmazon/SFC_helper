@@ -1,6 +1,15 @@
-# SFC Helper v2.3
+# SFC Helper v2.3.1
 
 A Chrome extension that helps manage SFC (Shop Floor Control) links and automatically creates organized tab groups with intelligent naming based on part information and work orders.
+
+## Fixed issue in v2.3
+- Error extract SFCs with format `1270378-35936`.
+- Updated sfcPattern regex - changed minimum character count from 10 to 5 in the alphanumeric portion
+- Old: /\b\d{7,}\-[A-Za-z0-9]{10,20}\b/gi
+- New: /\b\d{7,}\-[A-Za-z0-9]{5,20}\b/gi
+```javascript
+const sfcPattern = /\b\d{7,}\-[A-Za-z0-9]{5,20}\b/gi;
+```
 
 ## New Features in v2.3
 
