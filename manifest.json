@@ -1,0 +1,33 @@
+
+{
+  "manifest_version": 3,
+  "name": "SFC Helper",
+  "version": "2.3.1",
+  "description": "Create SFC's links and opens SFCs multiple tabs with auto-naming from part info.",
+  "icons": {
+    "128": "images/icon-128.png"
+  },
+  "author": "Xa Quan",
+  "permissions": ["tabs", "tabGroups", "activeTab", "scripting", "storage", "clipboardWrite"],
+  "host_permissions": [
+    "https://manufacture.prod.mes.kbobjects.com/*",
+    "https://ui.prod.console.mse.kuiper.amazon.dev/*",
+    "https://jira.kbobjects.com/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "settings.html",
+  "background": {
+    "service_worker": "global.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://manufacture.prod.mes.kbobjects.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
