@@ -361,8 +361,8 @@ document.addEventListener("DOMContentLoaded", async function() {
   function searchSFCsWRM(data){
     console.log('[SFC Helper] Searching for SFCs in WRM page using multiple strategies...');
     // Try multiple strategies to find SFCs in the WRM page
-    // Pattern matches: 7+ digits, hyphen, 5-20 alphanumeric chars (e.g., 1250649-GPE3GV5460940141, 1270378-35936)
-    const sfcPattern = /\b\d{7,}\-[A-Za-z0-9]{5,20}\b/gi;
+    // Pattern matches: 7+ digits, hyphen, 1-20 alphanumeric chars (e.g., 1250649-GPE3GV5460940141, 1270378-35936)
+    const sfcPattern = /\b\d{7,}\-[A-Za-z0-9]{1,20}\b/gi;
     const allSFCs = new Set();
     
     // Strategy 1: Search in table cells (most common location)
